@@ -121,12 +121,33 @@
 					<div class="col-sm-4">
 						<div class="quick-form">
 							<h3>Quick Contact</h3>
-							<form>
-								<input type="text" class="input-field" placeholder="Name">
-								<input type="email" class="input-field" placeholder="Email Address">
-								<input type="text" class="input-field" placeholder="Phone Number">
-								<textarea rows="3" class="textarea-field" placeholder="Your Message"></textarea>
-								<button type="submit">SEND</button>
+							<form id="contact-form" method="post" action="contact.php" role="form">
+								
+								<input id="form_name" type="text" name="name" class="input-field" placeholder="Name *" required="required" data-error="Firstname is required.">
+								<div class="help-block with-errors"></div>
+								<div class="clearfix"></div>
+								
+								<input id="form_email" type="email" name="email" class="input-field" placeholder="Email *" required="required" data-error="Valid email is required.">
+								<div class="help-block with-errors"></div>
+								<div class="clearfix"></div>
+								
+								<input id="form_phone" type="tel" name="phone" class="input-field" placeholder="Phone Number*" required="required" data-error="Valid phone is required.">
+								<div class="help-block with-errors"></div>
+								<div class="clearfix"></div>
+								
+								 <textarea id="form_message" name="message" class="textarea-field" placeholder="Message *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+								<div class="help-block with-errors"></div>
+								<div class="clearfix"></div>
+								
+								<div class="g-recaptcha" data-sitekey="6LdMo0sUAAAAAI5sGT_ftN7ajSoWHDIKZWDjU5Q3" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+								<input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+								<div class="help-block with-errors"></div>
+								<div class="clearfix"></div>
+									
+								<input type="submit" class="btn btn-success btn-send" value="Send message">
+								
+								<p class="text-muted">
+									<strong>*</strong> These fields are required.</p>
 							</form>
 						</div>
 					</div>
@@ -464,5 +485,6 @@
     <script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/layout.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
   </body>
 </html>	

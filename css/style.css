@@ -359,11 +359,17 @@ section.scroll-section a {
 
 /* Quick Contact Starts */
 
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+}
+
 .quick-form{
 	border: 1px solid #a2a1a1;
 	border-radius:4px;
 	padding: 15px;
 	float: left;
+	    width: 100%;
 }
 
 .quick-form .input-field {
